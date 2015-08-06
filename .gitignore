@@ -6,3 +6,6 @@ logs
 
 # third party
 public/components
+
+#comiled files
+public/compiled
