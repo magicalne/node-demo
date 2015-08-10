@@ -1,7 +1,10 @@
 doctype html
-html
+html(ng-app="phonecatApp")
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='./stylesheets/style.css')
+    link(rel='stylesheet', href='./components/bootstrap/dist/css/bootstrap.min.css')
+    script(src='./compiled/thirdparty.js')
+    script(src='./compiled/app.js')
   body
     block content
