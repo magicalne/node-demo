@@ -40,5 +40,7 @@
     "winston": "^1.0.0",
     "winston-mail": "^0.4.0"
   },
-  "devdependencies": {}
+  "devDependencies": {
+    "protractor": "^2.1.0"
+  }
 }
