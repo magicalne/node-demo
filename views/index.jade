@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  div(ng-controller="PhoneListCtrl")
+  div
     ul
       li(ng-repeat="phone in phones")
         span {{phone.name}}
@@ -14,3 +14,13 @@ block content
         th row number
       tr(ng-repeat="i in [0, 1, 2, 3, 4, 5, 6, 7]")
         td {{i + 1}}
+        
+  div(class="contrainer-fluid")
+    div(class="row")
+      div(class="col-md-2")
+        | Search: <input = ng-model="query">
+      div(class="col-md-10")
+        ul(class="phones")
+          li(ng-repeat="phone in phones | filter:query")
+            {{photo.name}}
+            p {{phone.snippet}}
