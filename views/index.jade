@@ -1,26 +1,14 @@
 extends layout
 
 block content
-  div
-    ul
-      li(ng-repeat="phone in phones")
-        span {{phone.name}}
-        p {{phone.snippet}}
-    p Total number of phones: {{phones.length}}
-    p Hello, {{name}}
+  | Search: <input ng-model="query">
+  | Sort by:
+  select(ng-model="orderProp")
+    option(value="name") Alphabetical
+    option(value="age") Newest
+    option(value="-age") Oldest
     
-    table
-      tr
-        th row number
-      tr(ng-repeat="i in [0, 1, 2, 3, 4, 5, 6, 7]")
-        td {{i + 1}}
-        
-  div(class="contrainer-fluid")
-    div(class="row")
-      div(class="col-md-2")
-        | Search: <input = ng-model="query">
-      div(class="col-md-10")
-        ul(class="phones")
-          li(ng-repeat="phone in phones | filter:query")
-            {{photo.name}}
-            p {{phone.snippet}}
+  ul(class="phones")
+    li(ng-repeat="phone in phones | filter:query | orderBy:orderProp")
+      span {{phone.name}}
+      p {{phone.snippet}}
