@@ -9,8 +9,10 @@ block content
     option(value="-age") Oldest
     
   ul(class="phones")
-    li(ng-repeat="phone in phones | filter:query | orderBy:orderProp")
-      span {{phone.name}}
-      p {{phone.snippet}}
+    li(ng-repeat="phone in phones | filter:query | orderBy:orderProp" class="thumbnail")
+      a(href="/phones/{{phone.id}}" class="thumb")
+        img(ng-src="{{phone.imageUrl}}")
+      a(href="/phones/{{phone.id}}")
+        {{phone.name}}
   
   pre {{phones | filter:query | orderBy:orderProp | json}}
