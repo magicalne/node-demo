@@ -22,9 +22,9 @@ gulp.task('thirdparty', function() {
   var basePath = './public/components/';
   return gulp.src([
       basePath + 'angularjs/angular.js',
+      basePath + 'angularjs-route/angular-route.js',
       basePath + 'jquery/dist/jquery.js',
-      basePath + 'bootstrap/dist/js/bootstrap.js',
-      basePath + 'angularjs-route/angular-route.js'
+      basePath + 'bootstrap/dist/js/bootstrap.js'
     ])
     .pipe(concat('thirdparty.js'))
     .pipe(gulp.dest(compiledPath));
